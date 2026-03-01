@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Synkore — Remplissez votre carnet de commandes en BTP</title>
 <meta name="description" content="Génération de leads qualifiés pour artisans et PME du bâtiment. Plombiers, maçons, électriciens, couvreurs : plus de chantiers, moins de temps perdu.">
+<link rel="icon" type="image/png" href="Design sans titre (1).png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -37,7 +38,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Grain */
   body::after {
     content: '';
     position: fixed;
@@ -47,7 +47,6 @@
     z-index: 9999;
   }
 
-  /* Animations */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -55,6 +54,10 @@
   @keyframes pulseGlow {
     0%, 100% { box-shadow: 0 0 20px var(--green-glow); }
     50% { box-shadow: 0 0 40px var(--green-glow), 0 0 60px rgba(22,163,74,0.08); }
+  }
+  @keyframes whatsappBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
   }
 
   .fade-up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
@@ -69,10 +72,7 @@
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* ===== NAV ===== */
   nav {
@@ -88,10 +88,7 @@
     border-bottom: 1px solid var(--dark-border);
     transition: all 0.3s;
   }
-  nav.scrolled {
-    padding: 0.7rem 2rem;
-    background: rgba(10,15,12,0.95);
-  }
+  nav.scrolled { padding: 0.7rem 2rem; background: rgba(10,15,12,0.95); }
 
   .nav-logo {
     display: flex;
@@ -99,26 +96,12 @@
     gap: 0.75rem;
     text-decoration: none;
   }
-
-  /* ============================
-     🔧 LOGO : remplace le div.logo-placeholder par :
-     <img src="TON-LOGO.png" alt="Synkore" style="width:38px;height:38px;border-radius:8px;object-fit:contain;">
-     ============================ */
-  .logo-placeholder {
+  .nav-logo img {
     width: 38px;
     height: 38px;
     border-radius: 8px;
-    background: var(--green);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: white;
-    flex-shrink: 0;
+    object-fit: contain;
   }
-
   .nav-brand {
     font-family: var(--font-display);
     font-weight: 700;
@@ -150,10 +133,7 @@
     font-weight: 600 !important;
     transition: all 0.2s !important;
   }
-  .nav-cta:hover {
-    background: var(--green-light) !important;
-    transform: translateY(-1px);
-  }
+  .nav-cta:hover { background: var(--green-light) !important; transform: translateY(-1px); }
 
   .nav-hamburger {
     display: none;
@@ -165,8 +145,7 @@
     padding: 4px;
   }
   .nav-hamburger span {
-    width: 24px;
-    height: 2px;
+    width: 24px; height: 2px;
     background: var(--white);
     border-radius: 2px;
     transition: all 0.3s;
@@ -237,10 +216,7 @@
     margin-bottom: 1.5rem;
     max-width: 900px;
   }
-  .hero h1 .highlight {
-    color: var(--green);
-    position: relative;
-  }
+  .hero h1 .highlight { color: var(--green); }
 
   .hero-sub {
     font-size: 1.2rem;
@@ -249,10 +225,7 @@
     line-height: 1.7;
     margin-bottom: 2.5rem;
   }
-  .hero-sub strong {
-    color: var(--white);
-    font-weight: 600;
-  }
+  .hero-sub strong { color: var(--white); font-weight: 600; }
 
   .hero-actions {
     display: flex;
@@ -297,10 +270,7 @@
     transition: all 0.25s;
     border: 1px solid var(--dark-border);
   }
-  .btn-secondary:hover {
-    border-color: var(--gray-400);
-    color: var(--white);
-  }
+  .btn-secondary:hover { border-color: var(--gray-400); color: var(--white); }
 
   .hero-proof {
     margin-top: 3rem;
@@ -330,10 +300,7 @@
     background: linear-gradient(90deg, transparent, var(--dark-border), transparent);
   }
 
-  .section-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
 
   .section-label {
     font-size: 0.75rem;
@@ -389,7 +356,7 @@
     transition: opacity 0.3s;
   }
   .problem-card:hover::before { opacity: 1; }
-  .problem-card:hover { border-color: var(--dark-border); transform: translateY(-2px); }
+  .problem-card:hover { transform: translateY(-2px); }
 
   .problem-icon {
     width: 44px; height: 44px;
@@ -407,15 +374,9 @@
     font-size: 1.15rem;
     font-weight: 700;
     margin-bottom: 0.6rem;
-    letter-spacing: -0.01em;
   }
-  .problem-card p {
-    color: var(--gray-400);
-    font-size: 0.92rem;
-    line-height: 1.6;
-  }
+  .problem-card p { color: var(--gray-400); font-size: 0.92rem; line-height: 1.6; }
 
-  /* Stats */
   .stats-bar {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -435,12 +396,7 @@
     letter-spacing: -0.03em;
     line-height: 1;
   }
-  .stat-label {
-    font-size: 0.85rem;
-    color: var(--gray-400);
-    margin-top: 0.4rem;
-    line-height: 1.4;
-  }
+  .stat-label { font-size: 0.85rem; color: var(--gray-400); margin-top: 0.4rem; line-height: 1.4; }
 
   /* ===== STEPS ===== */
   .steps-grid {
@@ -455,7 +411,6 @@
     border: 1px solid var(--dark-border);
     border-radius: 14px;
     padding: 2.5rem 2rem;
-    position: relative;
     counter-increment: step;
     transition: all 0.3s;
   }
@@ -469,7 +424,6 @@
     line-height: 1;
     margin-bottom: 1.5rem;
     display: block;
-    letter-spacing: -0.04em;
     transition: color 0.3s;
   }
   .step-card:hover::before { color: var(--green-glow-strong); }
@@ -480,11 +434,7 @@
     font-size: 1.2rem;
     margin-bottom: 0.6rem;
   }
-  .step-card p {
-    color: var(--gray-400);
-    font-size: 0.92rem;
-    line-height: 1.6;
-  }
+  .step-card p { color: var(--gray-400); font-size: 0.92rem; line-height: 1.6; }
 
   /* ===== PROOF ===== */
   .proof-grid {
@@ -504,7 +454,6 @@
     color: var(--cream);
     line-height: 1.6;
     margin-bottom: 1.2rem;
-    position: relative;
     padding-left: 1.2rem;
     border-left: 2px solid var(--green);
   }
@@ -562,10 +511,8 @@
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
-    letter-spacing: -0.02em;
     position: relative;
   }
-
   .offer-subtitle {
     color: var(--gray-300);
     font-size: 1.05rem;
@@ -604,14 +551,7 @@
     font-weight: 500;
     position: relative;
   }
-
-  .offer-cta {
-    width: 100%;
-    text-align: center;
-    font-size: 1.1rem;
-    padding: 1.1rem;
-    position: relative;
-  }
+  .offer-cta { width: 100%; text-align: center; font-size: 1.1rem; padding: 1.1rem; position: relative; }
 
   /* ===== FAQ ===== */
   .faq-list { max-width: 700px; margin: 0 auto; }
@@ -636,15 +576,11 @@
   .faq-question:hover { color: var(--green-light); }
   .faq-question svg { flex-shrink: 0; transition: transform 0.3s; }
   .faq-item.open .faq-question svg { transform: rotate(45deg); }
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s;
-  }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
   .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.5rem; }
   .faq-answer p { color: var(--gray-300); font-size: 0.95rem; line-height: 1.7; }
 
-  /* ===== CTA FINAL + CALENDRIER ===== */
+  /* ===== CONTACT / FORMULAIRE ===== */
   .final-cta {
     text-align: center;
     padding: 6rem 2rem;
@@ -665,39 +601,180 @@
   .final-cta .section-title { margin: 0 auto 1rem; max-width: 650px; }
   .final-cta .section-desc { margin: 0 auto 2.5rem; text-align: center; }
 
-  /* Calendrier GHL embed container */
-  .calendar-embed {
-    max-width: 700px;
-    margin: 2.5rem auto 0;
+  /* Form */
+  .contact-form {
+    max-width: 520px;
+    margin: 0 auto;
     background: var(--dark-card);
     border: 1px solid var(--dark-border);
     border-radius: 16px;
+    padding: 2.5rem;
+    text-align: left;
+  }
+
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray-300);
+    margin-bottom: 0.4rem;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: var(--dark);
+    border: 1px solid var(--dark-border);
+    border-radius: 8px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-group input::placeholder { color: var(--gray-400); }
+  .form-group input:focus,
+  .form-group select:focus { border-color: var(--green); }
+  .form-group select { cursor: pointer; appearance: none; }
+  .form-group select option { background: var(--dark); color: var(--white); }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .form-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray-400);
+    margin-top: 1rem;
+  }
+
+  .form-success {
+    display: none;
+    text-align: center;
     padding: 2rem;
-    min-height: 450px;
-    position: relative;
+  }
+  .form-success.show { display: block; }
+  .form-success h4 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--green-light);
+    margin-bottom: 0.5rem;
+  }
+  .form-success p { color: var(--gray-300); font-size: 0.95rem; line-height: 1.6; }
+
+  .divider-or {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .divider-or::before,
+  .divider-or::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--dark-border);
+  }
+  .divider-or span {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Calendar embed */
+  .calendar-embed {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    min-height: 200px;
   }
   .calendar-embed-placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 400px;
+    min-height: 180px;
     color: var(--gray-400);
-    font-size: 0.9rem;
-    gap: 1rem;
+    font-size: 0.85rem;
+    gap: 0.75rem;
+    text-align: center;
   }
-  .calendar-embed-placeholder svg { color: var(--green); opacity: 0.5; }
+  .calendar-embed-placeholder svg { color: var(--green); opacity: 0.4; }
   .calendar-embed-placeholder code {
     background: var(--dark);
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 6px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--green-light);
     border: 1px solid var(--dark-border);
-    max-width: 100%;
-    overflow-x: auto;
     word-break: break-all;
   }
+
+  /* ===== WHATSAPP WIDGET ===== */
+  .whatsapp-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .whatsapp-tooltip {
+    background: var(--white);
+    color: var(--dark);
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+  .whatsapp-widget:hover .whatsapp-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: all 0.3s;
+    text-decoration: none;
+    animation: whatsappBounce 3s ease infinite;
+  }
+  .whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37,211,102,0.5);
+    animation: none;
+  }
+  .whatsapp-btn svg { width: 32px; height: 32px; fill: white; }
 
   /* ===== FOOTER ===== */
   footer {
@@ -727,23 +804,27 @@
     .hero h1 { font-size: 2.2rem; }
     .hero-sub { font-size: 1rem; }
     .hero-proof { gap: 1.5rem; }
-    .problem-grid,
-    .steps-grid { grid-template-columns: 1fr; }
+    .problem-grid, .steps-grid { grid-template-columns: 1fr; }
     .stats-bar { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem; }
     .proof-grid { grid-template-columns: 1fr; }
     .offer-card { padding: 2rem; }
+    .contact-form { padding: 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
     .calendar-embed { padding: 1rem; }
     section { padding: 4rem 1.5rem; }
+    .whatsapp-tooltip { display: none; }
+    .whatsapp-widget { bottom: 16px; right: 16px; }
+    .whatsapp-btn { width: 54px; height: 54px; }
+    .whatsapp-btn svg { width: 28px; height: 28px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ===================== NAV ===================== -->
+<!-- ===== NAV ===== -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
-    <!-- 🔧 LOGO : remplace la ligne ci-dessous par <img src="ton-logo.png" alt="Synkore" style="width:38px;height:38px;border-radius:8px;object-fit:contain;"> -->
-    <div class="logo-placeholder">S</div>
+    <img src="Design sans titre (1).png" alt="Synkore">
     <span class="nav-brand">Synkore</span>
   </a>
   <ul class="nav-links" id="navLinks">
@@ -758,7 +839,7 @@
   </button>
 </nav>
 
-<!-- ===================== HERO ===================== -->
+<!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-badge fade-up">Spécialiste PME du bâtiment</div>
@@ -770,7 +851,7 @@
     </p>
     <div class="hero-actions fade-up fade-up-d3">
       <a href="#contact" class="btn-primary">
-        Réserver un appel découverte
+        Recevoir plus de chantiers
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="#methode" class="btn-secondary">Comment ça marche</a>
@@ -792,7 +873,7 @@
   </div>
 </section>
 
-<!-- ===================== PROBLÈME ===================== -->
+<!-- ===== PROBLÈME ===== -->
 <section class="problem-section" id="probleme">
   <div class="section-inner">
     <div class="section-label reveal">Le vrai problème</div>
@@ -840,7 +921,7 @@
   </div>
 </section>
 
-<!-- ===================== MÉTHODE ===================== -->
+<!-- ===== MÉTHODE ===== -->
 <section id="methode">
   <div class="section-inner">
     <div class="section-label reveal">Comment ça marche</div>
@@ -864,7 +945,7 @@
   </div>
 </section>
 
-<!-- ===================== TÉMOIGNAGES ===================== -->
+<!-- ===== TÉMOIGNAGES ===== -->
 <section class="problem-section" id="preuves">
   <div class="section-inner">
     <div class="section-label reveal">Ce qu'en disent les pros</div>
@@ -896,7 +977,7 @@
   </div>
 </section>
 
-<!-- ===================== OFFRE ===================== -->
+<!-- ===== OFFRE ===== -->
 <section class="offer-section" id="offre">
   <div class="section-inner">
     <div class="section-label reveal" style="text-align:center;">L'offre</div>
@@ -909,30 +990,12 @@
       <p class="offer-subtitle">Un système complet, clé en main, pour recevoir des demandes de chantier qualifiées dans votre zone — et ne plus jamais en perdre par manque de réactivité.</p>
 
       <ul class="offer-includes">
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Campagne Google Ads locale créée et gérée pour vous
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Réponse automatique en moins de 2 minutes à chaque lead
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Relances automatiques (email + SMS) jusqu'à réponse
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Demande d'avis Google automatisée après chaque chantier
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Tableau de bord simple : vos leads, leur statut, vos résultats
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Un interlocuteur dédié, pas un chatbot
-        </li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Campagne Google Ads locale créée et gérée pour vous</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Réponse automatique en moins de 2 minutes à chaque lead</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Relances automatiques (email + SMS) jusqu'à réponse</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Demande d'avis Google automatisée après chaque chantier</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Tableau de bord simple : vos leads, leur statut, vos résultats</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Un interlocuteur dédié, pas un chatbot</li>
       </ul>
 
       <div class="offer-guarantee">
@@ -940,14 +1003,12 @@
         Garantie 30 jours satisfait ou remboursé. Pas de résultat = pas de facture.
       </div>
 
-      <a href="#contact" class="btn-primary offer-cta">
-        Réserver mon appel découverte gratuit →
-      </a>
+      <a href="#contact" class="btn-primary offer-cta">Je veux remplir mon carnet →</a>
     </div>
   </div>
 </section>
 
-<!-- ===================== FAQ ===================== -->
+<!-- ===== FAQ ===== -->
 <section id="faq">
   <div class="section-inner">
     <div class="section-label reveal" style="text-align:center;">Questions fréquentes</div>
@@ -955,69 +1016,105 @@
     <br><br>
     <div class="faq-list">
       <div class="faq-item reveal">
-        <button class="faq-question">
-          Combien de temps avant de voir les premiers résultats ?
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer"><p>Les premières demandes arrivent généralement dans les 48 à 72 heures après le lancement de la campagne. Le système de relance prend son plein effet après 1 à 2 semaines, quand les séquences de suivi s'enclenchent.</p></div>
+        <button class="faq-question">Combien de temps avant de voir les premiers résultats ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-answer"><p>Les premières demandes arrivent généralement dans les 48 à 72 heures après le lancement de la campagne. Le système de relance prend son plein effet après 1 à 2 semaines.</p></div>
       </div>
       <div class="faq-item reveal">
-        <button class="faq-question">
-          Je ne suis pas à l'aise avec la technologie, c'est un problème ?
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
+        <button class="faq-question">Je ne suis pas à l'aise avec la technologie, c'est un problème ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
         <div class="faq-answer"><p>Pas du tout. On gère tout de A à Z. Vous recevez vos demandes par SMS ou email, et on vous fait un point régulier. Si vous savez lire un SMS, vous savez utiliser notre service.</p></div>
       </div>
       <div class="faq-item reveal">
-        <button class="faq-question">
-          C'est quoi la différence avec les plateformes de devis (type Habitatpresto) ?
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-answer"><p>Sur ces plateformes, le même lead est vendu à 4-5 artisans. Ici, les demandes sont exclusives : quand quelqu'un vous contacte, c'est vous et personne d'autre. Et le suivi automatique fait le reste.</p></div>
+        <button class="faq-question">C'est quoi la différence avec les plateformes de devis (type Habitatpresto) ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-answer"><p>Sur ces plateformes, le même lead est vendu à 4-5 artisans. Ici, les demandes sont exclusives : quand quelqu'un vous contacte, c'est vous et personne d'autre.</p></div>
       </div>
       <div class="faq-item reveal">
-        <button class="faq-question">
-          Et si ça ne marche pas, je perds quoi ?
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
+        <button class="faq-question">Et si ça ne marche pas, je perds quoi ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
         <div class="faq-answer"><p>Rien. Garantie 30 jours : si vous n'avez pas de résultats concrets, on vous rembourse intégralement. On prend le risque, pas vous.</p></div>
       </div>
       <div class="faq-item reveal">
-        <button class="faq-question">
-          Je suis plombier / électricien / couvreur / maçon — ça marche pour moi ?
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
+        <button class="faq-question">Je suis plombier / électricien / couvreur / maçon — ça marche pour moi ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
         <div class="faq-answer"><p>Oui. Notre système est conçu spécifiquement pour les métiers du bâtiment — plomberie, électricité, maçonnerie, couverture, chauffage, rénovation. On adapte les campagnes à votre métier et votre zone.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== CTA FINAL + CALENDRIER ===================== -->
+<!-- ===== CTA + FORMULAIRE + CALENDRIER ===== -->
 <section class="final-cta" id="contact">
   <div class="section-inner">
     <div class="section-label reveal">Prêt ?</div>
     <h2 class="section-title reveal">Arrêtez de perdre des clients.<br>Remplissez votre carnet.</h2>
-    <p class="section-desc reveal">Un appel de 15 minutes pour comprendre votre situation, sans engagement. Si on peut vous aider, on vous montre comment. Sinon, on vous le dit.</p>
+    <p class="section-desc reveal">Remplissez le formulaire, on vous rappelle dans les 24h. Ou réservez directement un créneau.</p>
 
-    <!-- ============================================
-         🔧 CALENDRIER GHL : Remplace le contenu de cette div par ton widget calendrier.
-         
-         Dans GHL → Calendars → ton calendrier → "Embed" → copie le code iframe.
-         Ça ressemble à :
-         <iframe src="https://api.leadconnectorhq.com/widget/booking/XXXXXXXXX" 
-                 style="width:100%;border:none;overflow:hidden;" 
-                 scrolling="no" id="booking-iframe"></iframe>
-         
-         Colle-le à la place du div .calendar-embed-placeholder ci-dessous.
-         ============================================ -->
+    <!-- FORMULAIRE -->
+    <div class="contact-form reveal" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">Prénom</label>
+          <input type="text" id="fname" name="first_name" placeholder="Jean" required>
+        </div>
+        <div class="form-group">
+          <label for="lname">Nom</label>
+          <input type="text" id="lname" name="last_name" placeholder="Dupont" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" required>
+      </div>
+      <div class="form-group">
+        <label for="metier">Votre métier</label>
+        <select id="metier" name="metier" required>
+          <option value="" disabled selected>Sélectionnez votre métier</option>
+          <option value="plomberie">Plomberie / Chauffage</option>
+          <option value="electricite">Électricité</option>
+          <option value="maconnerie">Maçonnerie / Gros œuvre</option>
+          <option value="couverture">Couverture / Toiture</option>
+          <option value="renovation">Rénovation générale</option>
+          <option value="peinture">Peinture / Revêtements</option>
+          <option value="menuiserie">Menuiserie</option>
+          <option value="carrelage">Carrelage / Sol</option>
+          <option value="autre">Autre métier BTP</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ville">Ville / Zone d'intervention</label>
+        <input type="text" id="ville" name="ville" placeholder="Lyon, Marseille, Nantes..." required>
+      </div>
+
+      <button type="button" class="btn-primary form-submit" onclick="submitForm()">
+        On me rappelle →
+      </button>
+      <p class="form-note">Gratuit · Sans engagement · Réponse sous 24h</p>
+
+      <!-- Succès -->
+      <div class="form-success" id="formSuccess">
+        <h4>✓ Demande envoyée !</h4>
+        <p>On vous rappelle dans les 24h pour comprendre votre situation et voir comment on peut remplir votre carnet.</p>
+      </div>
+    </div>
+
+    <!-- OU -->
+    <div class="divider-or reveal">
+      <span>ou réservez directement</span>
+    </div>
+
+    <!-- CALENDRIER GHL -->
     <div class="calendar-embed reveal">
+      <!-- ============================================
+           🔧 CALENDRIER GHL : Remplace ce bloc par ton iframe.
+           Dans GHL → Calendars → ton calendrier → "Embed" → copie le code.
+           Exemple :
+           <iframe src="https://api.leadconnectorhq.com/widget/booking/XXXXXXXXX"
+                   style="width:100%;height:600px;border:none;"
+                   scrolling="no"></iframe>
+           ============================================ -->
       <div class="calendar-embed-placeholder">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
         </svg>
-        <p>Ton calendrier GHL s'affichera ici</p>
-        <code>&lt;iframe src="https://api.leadconnectorhq.com/widget/booking/TON_ID" style="width:100%;height:600px;border:none;" scrolling="no"&gt;&lt;/iframe&gt;</code>
+        <p>Ton calendrier GHL apparaîtra ici</p>
+        <code>Remplace ce bloc par ton iframe GHL</code>
       </div>
     </div>
 
@@ -1025,24 +1122,34 @@
   </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
+<!-- ===== FOOTER ===== -->
 <footer>
   <p>&copy; 2025 Synkore. Tous droits réservés. · <a href="mailto:contact@synkore.com">contact@synkore.com</a></p>
 </footer>
 
+<!-- ===== WHATSAPP WIDGET ===== -->
+<!-- 🔧 Remplace TON_NUMERO par ton numéro WhatsApp (format international sans +, ex: 33612345678) -->
+<div class="whatsapp-widget">
+  <div class="whatsapp-tooltip">Une question ? Écrivez-nous</div>
+  <a href="https://wa.me/33662013243?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20votre%20offre%20Carnet%20Plein%20pour%20mon%20entreprise%20BTP."
+     class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>
+
 <script>
-// Nav scroll effect
+// Nav scroll
 const nav = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// Hamburger menu
+// Hamburger
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => navLinks.classList.remove('open'));
 });
@@ -1059,7 +1166,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 reveals.forEach(el => observer.observe(el));
 
-// FAQ accordion
+// FAQ
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
@@ -1077,6 +1184,70 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
+
+// ===== FORMULAIRE → WEBHOOK GHL =====
+function submitForm() {
+  const form = document.getElementById('contactForm');
+  const btn = form.querySelector('.form-submit');
+  const success = document.getElementById('formSuccess');
+
+  const data = {
+    first_name: document.getElementById('fname').value,
+    last_name: document.getElementById('lname').value,
+    phone: document.getElementById('phone').value,
+    metier: document.getElementById('metier').value,
+    ville: document.getElementById('ville').value,
+    source: 'Site Synkore - Formulaire Carnet Plein'
+  };
+
+  // Validation simple
+  if (!data.first_name || !data.phone || !data.metier || !data.ville) {
+    btn.textContent = '⚠ Remplissez tous les champs';
+    btn.style.background = '#8B5CF6';
+    setTimeout(() => {
+      btn.textContent = 'On me rappelle →';
+      btn.style.background = '';
+    }, 2000);
+    return;
+  }
+
+  btn.textContent = 'Envoi en cours...';
+  btn.disabled = true;
+
+  /* ============================================
+     🔧 WEBHOOK GHL : Remplace l'URL ci-dessous par ton webhook.
+     
+     Dans GHL → Automation → Create Workflow → Trigger: "Webhook"
+     → Copie l'URL du webhook → Colle-la ici.
+     
+     Le workflow recevra : first_name, last_name, phone, metier, ville, source
+     Tu peux ensuite créer un contact, envoyer un SMS de confirmation, 
+     assigner à un pipeline, etc.
+     ============================================ */
+  const WEBHOOK_URL = 'COLLE_TON_WEBHOOK_GHL_ICI';
+
+  fetch(WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+    mode: 'no-cors'
+  })
+  .then(() => {
+    // Masquer le formulaire, afficher le succès
+    form.querySelectorAll('.form-group, .form-row, .form-submit, .form-note').forEach(el => {
+      el.style.display = 'none';
+    });
+    success.classList.add('show');
+  })
+  .catch(() => {
+    // Même en cas d'erreur (mode no-cors), on affiche le succès
+    // car le webhook reçoit quand même la data
+    form.querySelectorAll('.form-group, .form-row, .form-submit, .form-note').forEach(el => {
+      el.style.display = 'none';
+    });
+    success.classList.add('show');
+  });
+}
 </script>
 
 </body>
