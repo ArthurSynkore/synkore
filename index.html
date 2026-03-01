@@ -540,7 +540,7 @@
 
   /* Calendly */
   .calendly-container {
-    max-width: 520px;
+    max-width: 620px;
     margin: 0 auto;
     background: var(--dark-card);
     border: 1px solid var(--dark-border);
@@ -856,7 +856,7 @@
     <!-- TAB: CALENDLY -->
     <div class="tab-content" id="tab-calendar">
       <div class="calendly-container">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/arthur-signorel/30min?hide_gdpr_banner=1&background_color=0f1610&text_color=f0f5f1&primary_color=16a34a" style="min-width:100%;min-height:650px;"></div>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/arthur-signorel/30min?hide_gdpr_banner=1" style="min-width:100%;min-height:700px;"></div>
       </div>
     </div>
 
@@ -953,8 +953,8 @@ function switchTab(tab) {
   OPTION B : Google Sheets direct (via Google Apps Script)
   → Plus technique mais 100% gratuit sans limite. Demande-moi si tu veux cette option.
 */
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/https://formspree.io/f/xykdanly'; // 🔧 Remplace par ton endpoint
-
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xykdanly';
+  
 function submitForm() {
   const btn = document.querySelector('.form-submit');
   const success = document.getElementById('formSuccess');
