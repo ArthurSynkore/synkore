@@ -20,7 +20,6 @@
     --dark-subtle: #0D1310;
     --gray-400: #7A8A7E;
     --gray-300: #A0B0A4;
-    --gray-200: #C0CCC3;
     --white: #F0F5F1;
     --cream: #DDE8DF;
     --font-display: 'Bricolage Grotesque', sans-serif;
@@ -64,7 +63,6 @@
   .fade-up-d1 { animation-delay: 0.1s; }
   .fade-up-d2 { animation-delay: 0.2s; }
   .fade-up-d3 { animation-delay: 0.3s; }
-  .fade-up-d4 { animation-delay: 0.4s; }
   .fade-up-d5 { animation-delay: 0.5s; }
 
   .reveal {
@@ -97,8 +95,7 @@
     text-decoration: none;
   }
   .nav-logo img {
-    width: 38px;
-    height: 38px;
+    width: 38px; height: 38px;
     border-radius: 8px;
     object-fit: contain;
   }
@@ -227,12 +224,7 @@
   }
   .hero-sub strong { color: var(--white); font-weight: 600; }
 
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
 
   .btn-primary {
     display: inline-flex;
@@ -288,10 +280,7 @@
   .hero-proof-item svg { color: var(--green); flex-shrink: 0; }
 
   /* ===== SECTIONS ===== */
-  section {
-    padding: 6rem 2rem;
-    position: relative;
-  }
+  section { padding: 6rem 2rem; position: relative; }
   section::after {
     content: '';
     position: absolute;
@@ -299,257 +288,145 @@
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--dark-border), transparent);
   }
-
   .section-inner { max-width: 1100px; margin: 0 auto; }
-
   .section-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--green);
-    margin-bottom: 1rem;
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--green); margin-bottom: 1rem;
   }
-
   .section-title {
     font-family: var(--font-display);
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
+    font-weight: 700; line-height: 1.1;
+    letter-spacing: -0.02em; margin-bottom: 1rem;
   }
-
   .section-desc {
-    font-size: 1.1rem;
-    color: var(--gray-300);
-    max-width: 550px;
-    line-height: 1.6;
-    margin-bottom: 3rem;
+    font-size: 1.1rem; color: var(--gray-300);
+    max-width: 550px; line-height: 1.6; margin-bottom: 3rem;
   }
 
   /* ===== PROBLÈME ===== */
   .problem-section { background: var(--dark-subtle); }
-
-  .problem-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
+  .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .problem-card {
     background: var(--dark);
     border: 1px solid var(--dark-border);
-    border-radius: 14px;
-    padding: 2rem;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
+    border-radius: 14px; padding: 2rem;
+    transition: all 0.3s; position: relative; overflow: hidden;
   }
   .problem-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
     background: linear-gradient(90deg, var(--green), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
+    opacity: 0; transition: opacity 0.3s;
   }
   .problem-card:hover::before { opacity: 1; }
   .problem-card:hover { transform: translateY(-2px); }
-
   .problem-icon {
     width: 44px; height: 44px;
-    background: var(--green-glow);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.2rem;
-    color: var(--green);
+    background: var(--green-glow); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.2rem; color: var(--green);
   }
-
   .problem-card h3 {
     font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 0.6rem;
+    font-size: 1.15rem; font-weight: 700; margin-bottom: 0.6rem;
   }
   .problem-card p { color: var(--gray-400); font-size: 0.92rem; line-height: 1.6; }
 
   .stats-bar {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
     padding: 3rem;
     background: linear-gradient(135deg, var(--dark-card) 0%, var(--dark-subtle) 100%);
-    border: 1px solid var(--dark-border);
-    border-radius: 16px;
-    margin: 3rem 0;
+    border: 1px solid var(--dark-border); border-radius: 16px; margin: 3rem 0;
   }
   .stat-item { text-align: center; }
   .stat-number {
     font-family: var(--font-display);
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--green);
-    letter-spacing: -0.03em;
-    line-height: 1;
+    font-size: 2.5rem; font-weight: 800;
+    color: var(--green); letter-spacing: -0.03em; line-height: 1;
   }
   .stat-label { font-size: 0.85rem; color: var(--gray-400); margin-top: 0.4rem; line-height: 1.4; }
 
   /* ===== STEPS ===== */
   .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    counter-reset: step;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; counter-reset: step;
   }
-
   .step-card {
     background: var(--dark-card);
-    border: 1px solid var(--dark-border);
-    border-radius: 14px;
-    padding: 2.5rem 2rem;
-    counter-increment: step;
-    transition: all 0.3s;
+    border: 1px solid var(--dark-border); border-radius: 14px;
+    padding: 2.5rem 2rem; counter-increment: step; transition: all 0.3s;
   }
   .step-card:hover { border-color: rgba(22,163,74,0.3); }
   .step-card::before {
     content: counter(step, decimal-leading-zero);
     font-family: var(--font-display);
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: var(--dark-border);
-    line-height: 1;
-    margin-bottom: 1.5rem;
-    display: block;
-    transition: color 0.3s;
+    font-size: 3.5rem; font-weight: 800;
+    color: var(--dark-border); line-height: 1;
+    margin-bottom: 1.5rem; display: block; transition: color 0.3s;
   }
   .step-card:hover::before { color: var(--green-glow-strong); }
-
-  .step-card h3 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-bottom: 0.6rem;
-  }
+  .step-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; margin-bottom: 0.6rem; }
   .step-card p { color: var(--gray-400); font-size: 0.92rem; line-height: 1.6; }
 
   /* ===== PROOF ===== */
-  .proof-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
+  .proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .proof-card {
     background: var(--dark-card);
-    border: 1px solid var(--dark-border);
-    border-radius: 14px;
-    padding: 2rem;
+    border: 1px solid var(--dark-border); border-radius: 14px; padding: 2rem;
   }
   .proof-card blockquote {
-    font-size: 1rem;
-    font-style: italic;
-    color: var(--cream);
-    line-height: 1.6;
-    margin-bottom: 1.2rem;
-    padding-left: 1.2rem;
-    border-left: 2px solid var(--green);
+    font-size: 1rem; font-style: italic; color: var(--cream);
+    line-height: 1.6; margin-bottom: 1.2rem;
+    padding-left: 1.2rem; border-left: 2px solid var(--green);
   }
   .proof-author { display: flex; align-items: center; gap: 0.75rem; }
   .proof-avatar {
     width: 40px; height: 40px;
-    background: var(--green-glow);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    color: var(--green);
-    font-size: 0.9rem;
+    background: var(--green-glow); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: var(--green); font-size: 0.9rem;
   }
   .proof-name { font-weight: 600; font-size: 0.9rem; }
   .proof-role { font-size: 0.8rem; color: var(--gray-400); }
 
   /* ===== OFFRE ===== */
   .offer-section { background: var(--dark-subtle); }
-
   .offer-card {
     background: var(--dark);
-    border: 2px solid var(--green);
-    border-radius: 20px;
-    padding: 3.5rem;
-    max-width: 700px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
+    border: 2px solid var(--green); border-radius: 20px;
+    padding: 3.5rem; max-width: 700px; margin: 0 auto;
+    position: relative; overflow: hidden;
   }
   .offer-card::before {
-    content: '';
-    position: absolute;
-    top: -50%; right: -30%;
-    width: 400px; height: 400px;
+    content: ''; position: absolute;
+    top: -50%; right: -30%; width: 400px; height: 400px;
     background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
     pointer-events: none;
   }
-
   .offer-tag {
-    display: inline-block;
-    background: var(--green);
-    color: white;
-    padding: 0.3rem 0.9rem;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.5rem;
+    display: inline-block; background: var(--green); color: white;
+    padding: 0.3rem 0.9rem; border-radius: 6px;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1.5rem;
   }
-
   .offer-card h3 {
     font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-    position: relative;
+    font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; position: relative;
   }
-  .offer-subtitle {
-    color: var(--gray-300);
-    font-size: 1.05rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    position: relative;
-  }
-
-  .offer-includes {
-    list-style: none;
-    margin-bottom: 2.5rem;
-    position: relative;
-  }
+  .offer-subtitle { color: var(--gray-300); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.6; position: relative; }
+  .offer-includes { list-style: none; margin-bottom: 2.5rem; position: relative; }
   .offer-includes li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 0.6rem 0;
-    font-size: 0.95rem;
-    color: var(--cream);
-    line-height: 1.5;
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    padding: 0.6rem 0; font-size: 0.95rem; color: var(--cream); line-height: 1.5;
   }
   .offer-includes li svg { color: var(--green); flex-shrink: 0; margin-top: 2px; }
-
   .offer-guarantee {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    display: flex; align-items: center; gap: 0.75rem;
     background: rgba(22,163,74,0.08);
     border: 1px solid rgba(22,163,74,0.2);
-    padding: 1rem 1.2rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
-    color: var(--green-light);
-    font-weight: 500;
-    position: relative;
+    padding: 1rem 1.2rem; border-radius: 10px; margin-bottom: 2rem;
+    font-size: 0.9rem; color: var(--green-light); font-weight: 500; position: relative;
   }
   .offer-cta { width: 100%; text-align: center; font-size: 1.1rem; padding: 1.1rem; position: relative; }
 
@@ -557,21 +434,12 @@
   .faq-list { max-width: 700px; margin: 0 auto; }
   .faq-item { border-bottom: 1px solid var(--dark-border); }
   .faq-question {
-    width: 100%;
-    background: none;
-    border: none;
-    color: var(--white);
-    font-family: var(--font-body);
-    font-size: 1.05rem;
-    font-weight: 600;
-    text-align: left;
-    padding: 1.5rem 0;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    transition: color 0.2s;
+    width: 100%; background: none; border: none;
+    color: var(--white); font-family: var(--font-body);
+    font-size: 1.05rem; font-weight: 600; text-align: left;
+    padding: 1.5rem 0; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 1rem; transition: color 0.2s;
   }
   .faq-question:hover { color: var(--green-light); }
   .faq-question svg { flex-shrink: 0; transition: transform 0.3s; }
@@ -580,19 +448,14 @@
   .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.5rem; }
   .faq-answer p { color: var(--gray-300); font-size: 0.95rem; line-height: 1.7; }
 
-  /* ===== CONTACT / FORMULAIRE ===== */
+  /* ===== CONTACT ===== */
   .final-cta {
-    text-align: center;
-    padding: 6rem 2rem;
-    background: var(--dark-subtle);
-    position: relative;
-    overflow: hidden;
+    text-align: center; padding: 6rem 2rem;
+    background: var(--dark-subtle); position: relative; overflow: hidden;
   }
   .final-cta::before {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
+    content: ''; position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
     width: 600px; height: 600px;
     background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
     pointer-events: none;
@@ -600,6 +463,40 @@
   .final-cta .section-inner { position: relative; z-index: 1; }
   .final-cta .section-title { margin: 0 auto 1rem; max-width: 650px; }
   .final-cta .section-desc { margin: 0 auto 2.5rem; text-align: center; }
+
+  /* Tabs */
+  .contact-tabs {
+    display: flex;
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .contact-tab {
+    flex: 1;
+    padding: 0.9rem;
+    background: none;
+    border: none;
+    color: var(--gray-400);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .contact-tab.active {
+    background: var(--green);
+    color: white;
+  }
+  .contact-tab:not(.active):hover {
+    color: var(--white);
+    background: var(--dark-border);
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
 
   /* Form */
   .contact-form {
@@ -611,162 +508,69 @@
     padding: 2.5rem;
     text-align: left;
   }
-
   .form-group { margin-bottom: 1.2rem; }
   .form-group label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--gray-300);
-    margin-bottom: 0.4rem;
+    display: block; font-size: 0.85rem; font-weight: 600;
+    color: var(--gray-300); margin-bottom: 0.4rem;
   }
   .form-group input,
   .form-group select {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    background: var(--dark);
-    border: 1px solid var(--dark-border);
-    border-radius: 8px;
-    color: var(--white);
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    transition: border-color 0.2s;
-    outline: none;
+    width: 100%; padding: 0.85rem 1rem;
+    background: var(--dark); border: 1px solid var(--dark-border);
+    border-radius: 8px; color: var(--white);
+    font-family: var(--font-body); font-size: 0.95rem;
+    transition: border-color 0.2s; outline: none;
   }
   .form-group input::placeholder { color: var(--gray-400); }
-  .form-group input:focus,
-  .form-group select:focus { border-color: var(--green); }
+  .form-group input:focus, .form-group select:focus { border-color: var(--green); }
   .form-group select { cursor: pointer; appearance: none; }
   .form-group select option { background: var(--dark); color: var(--white); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-submit { width: 100%; margin-top: 0.5rem; }
+  .form-note { text-align: center; font-size: 0.8rem; color: var(--gray-400); margin-top: 1rem; }
 
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .form-submit {
-    width: 100%;
-    margin-top: 0.5rem;
-  }
-
-  .form-note {
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--gray-400);
-    margin-top: 1rem;
-  }
-
-  .form-success {
-    display: none;
-    text-align: center;
-    padding: 2rem;
-  }
+  .form-success { display: none; text-align: center; padding: 2rem; }
   .form-success.show { display: block; }
   .form-success h4 {
     font-family: var(--font-display);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--green-light);
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem; font-weight: 700;
+    color: var(--green-light); margin-bottom: 0.5rem;
   }
   .form-success p { color: var(--gray-300); font-size: 0.95rem; line-height: 1.6; }
 
-  .divider-or {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 2rem 0;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .divider-or::before,
-  .divider-or::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--dark-border);
-  }
-  .divider-or span {
-    font-size: 0.8rem;
-    color: var(--gray-400);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  /* Calendar embed */
-  .calendar-embed {
+  /* Calendly */
+  .calendly-container {
     max-width: 520px;
     margin: 0 auto;
     background: var(--dark-card);
     border: 1px solid var(--dark-border);
     border-radius: 16px;
-    padding: 1.5rem;
-    min-height: 200px;
+    overflow: hidden;
+    min-height: 650px;
   }
-  .calendar-embed-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 180px;
-    color: var(--gray-400);
-    font-size: 0.85rem;
-    gap: 0.75rem;
-    text-align: center;
-  }
-  .calendar-embed-placeholder svg { color: var(--green); opacity: 0.4; }
-  .calendar-embed-placeholder code {
-    background: var(--dark);
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    color: var(--green-light);
-    border: 1px solid var(--dark-border);
-    word-break: break-all;
-  }
+  .calendly-inline-widget { min-width: 100%; min-height: 650px; }
 
-  /* ===== WHATSAPP WIDGET ===== */
+  /* ===== WHATSAPP ===== */
   .whatsapp-widget {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 9998;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    position: fixed; bottom: 24px; right: 24px; z-index: 9998;
+    display: flex; align-items: center; gap: 0.75rem;
   }
   .whatsapp-tooltip {
-    background: var(--white);
-    color: var(--dark);
-    padding: 0.6rem 1rem;
-    border-radius: 10px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    background: var(--white); color: var(--dark);
+    padding: 0.6rem 1rem; border-radius: 10px;
+    font-size: 0.85rem; font-weight: 600;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateX(10px);
-    transition: all 0.3s;
+    white-space: nowrap; opacity: 0;
+    transform: translateX(10px); transition: all 0.3s;
     pointer-events: none;
   }
-  .whatsapp-widget:hover .whatsapp-tooltip {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  .whatsapp-widget:hover .whatsapp-tooltip { opacity: 1; transform: translateX(0); }
   .whatsapp-btn {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    width: 60px; height: 60px; border-radius: 50%;
     background: #25D366;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-    transition: all 0.3s;
-    text-decoration: none;
+    transition: all 0.3s; text-decoration: none;
     animation: whatsappBounce 3s ease infinite;
   }
   .whatsapp-btn:hover {
@@ -778,10 +582,8 @@
 
   /* ===== FOOTER ===== */
   footer {
-    padding: 3rem 2rem;
-    text-align: center;
-    color: var(--gray-400);
-    font-size: 0.85rem;
+    padding: 3rem 2rem; text-align: center;
+    color: var(--gray-400); font-size: 0.85rem;
   }
   footer a { color: var(--gray-300); text-decoration: none; }
   footer a:hover { color: var(--green-light); }
@@ -791,13 +593,10 @@
     .nav-links { display: none; }
     .nav-hamburger { display: flex; }
     .nav-links.open {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 100%; left: 0; right: 0;
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
       background: rgba(10,15,12,0.98);
-      padding: 1.5rem 2rem;
-      gap: 1rem;
+      padding: 1.5rem 2rem; gap: 1rem;
       border-bottom: 1px solid var(--dark-border);
     }
     .hero { padding-top: 7rem; min-height: auto; }
@@ -810,18 +609,19 @@
     .offer-card { padding: 2rem; }
     .contact-form { padding: 1.5rem; }
     .form-row { grid-template-columns: 1fr; }
-    .calendar-embed { padding: 1rem; }
     section { padding: 4rem 1.5rem; }
     .whatsapp-tooltip { display: none; }
     .whatsapp-widget { bottom: 16px; right: 16px; }
     .whatsapp-btn { width: 54px; height: 54px; }
     .whatsapp-btn svg { width: 28px; height: 28px; }
+    .calendly-container { min-height: 750px; }
+    .calendly-inline-widget { min-height: 750px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
+<!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
     <img src="Design sans titre (1).png" alt="Synkore">
@@ -839,7 +639,7 @@
   </button>
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-badge fade-up">Spécialiste PME du bâtiment</div>
@@ -873,61 +673,43 @@
   </div>
 </section>
 
-<!-- ===== PROBLÈME ===== -->
+<!-- PROBLÈME -->
 <section class="problem-section" id="probleme">
   <div class="section-inner">
     <div class="section-label reveal">Le vrai problème</div>
     <h2 class="section-title reveal">Vous êtes un bon artisan.<br>Mais le téléphone ne sonne pas assez.</h2>
     <p class="section-desc reveal">Et quand il sonne, c'est déjà trop tard : le prospect est passé chez le concurrent qui a décroché en premier.</p>
-
     <div class="problem-grid">
       <div class="problem-card reveal">
-        <div class="problem-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
+        <div class="problem-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <h3>Le temps de réponse vous tue</h3>
         <p>78% des clients signent avec le premier artisan qui répond. Quand vous êtes sur chantier, vous perdez des leads à chaque minute.</p>
       </div>
       <div class="problem-card reveal">
-        <div class="problem-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
+        <div class="problem-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
         <h3>Pas le temps de relancer</h3>
         <p>Vous envoyez un devis, puis plus rien. Pas de suivi, pas de relance. Le client est parti voir ailleurs pendant que vous étiez occupé.</p>
       </div>
       <div class="problem-card reveal">
-        <div class="problem-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="problem-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <h3>Le bouche-à-oreille ne suffit plus</h3>
         <p>Ça marchait avant. Maintenant les clients cherchent sur Google, comparent 3 artisans en 10 minutes, et choisissent le plus réactif.</p>
       </div>
     </div>
-
     <div class="stats-bar reveal">
-      <div class="stat-item">
-        <div class="stat-number">78%</div>
-        <div class="stat-label">des clients signent avec<br>le 1er qui répond</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">&lt;2min</div>
-        <div class="stat-label">temps de réponse moyen<br>avec notre système</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">3-5x</div>
-        <div class="stat-label">plus de contacts qualifiés<br>qu'avec le bouche-à-oreille</div>
-      </div>
+      <div class="stat-item"><div class="stat-number">78%</div><div class="stat-label">des clients signent avec<br>le 1er qui répond</div></div>
+      <div class="stat-item"><div class="stat-number">&lt;2min</div><div class="stat-label">temps de réponse moyen<br>avec notre système</div></div>
+      <div class="stat-item"><div class="stat-number">3-5x</div><div class="stat-label">plus de contacts qualifiés<br>qu'avec le bouche-à-oreille</div></div>
     </div>
   </div>
 </section>
 
-<!-- ===== MÉTHODE ===== -->
+<!-- MÉTHODE -->
 <section id="methode">
   <div class="section-inner">
     <div class="section-label reveal">Comment ça marche</div>
     <h2 class="section-title reveal">3 étapes. Vous ne touchez à rien.</h2>
     <p class="section-desc reveal">On s'occupe de tout, de la publicité au suivi client. Vous recevez des chantiers prêts à démarrer.</p>
-
     <div class="steps-grid">
       <div class="step-card reveal">
         <h3>On attire les clients de votre zone</h3>
@@ -945,50 +727,41 @@
   </div>
 </section>
 
-<!-- ===== TÉMOIGNAGES ===== -->
+<!-- TÉMOIGNAGES -->
 <section class="problem-section" id="preuves">
   <div class="section-inner">
     <div class="section-label reveal">Ce qu'en disent les pros</div>
     <h2 class="section-title reveal">Des artisans qui bossent, pas qui scrollent</h2>
     <p class="section-desc reveal">On travaille avec des entreprises BTP de 3 à 15 salariés. Voici leurs retours.</p>
-
     <div class="proof-grid">
       <div class="proof-card reveal">
         <blockquote>On recevait 2-3 demandes par mois au pif. Maintenant c'est régulier, et surtout je n'ai plus besoin de rappeler les gens moi-même.</blockquote>
         <div class="proof-author">
           <div class="proof-avatar">TL</div>
-          <div>
-            <div class="proof-name">Thierry L.</div>
-            <div class="proof-role">Plombier-chauffagiste · 6 salariés</div>
-          </div>
+          <div><div class="proof-name">Thierry L.</div><div class="proof-role">Plombier-chauffagiste · 6 salariés</div></div>
         </div>
       </div>
       <div class="proof-card reveal">
         <blockquote>Le système de relance auto, c'est ce qui change tout. Avant, mes devis restaient sans réponse. Maintenant j'ai un vrai suivi sans y passer du temps.</blockquote>
         <div class="proof-author">
           <div class="proof-avatar">SB</div>
-          <div>
-            <div class="proof-name">Sophie B.</div>
-            <div class="proof-role">Gérante entreprise de maçonnerie · 8 salariés</div>
-          </div>
+          <div><div class="proof-name">Sophie B.</div><div class="proof-role">Gérante entreprise de maçonnerie · 8 salariés</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== OFFRE ===== -->
+<!-- OFFRE -->
 <section class="offer-section" id="offre">
   <div class="section-inner">
     <div class="section-label reveal" style="text-align:center;">L'offre</div>
     <h2 class="section-title reveal" style="text-align:center;">Carnet Plein</h2>
     <p class="section-desc reveal" style="text-align:center;margin-left:auto;margin-right:auto;">Tout ce qu'il faut pour remplir votre planning. Sans engagement long terme.</p>
-
     <div class="offer-card reveal">
       <div class="offer-tag">PLACES LIMITÉES</div>
       <h3>Génération de leads + suivi automatisé</h3>
       <p class="offer-subtitle">Un système complet, clé en main, pour recevoir des demandes de chantier qualifiées dans votre zone — et ne plus jamais en perdre par manque de réactivité.</p>
-
       <ul class="offer-includes">
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Campagne Google Ads locale créée et gérée pour vous</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Réponse automatique en moins de 2 minutes à chaque lead</li>
@@ -997,138 +770,107 @@
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Tableau de bord simple : vos leads, leur statut, vos résultats</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Un interlocuteur dédié, pas un chatbot</li>
       </ul>
-
       <div class="offer-guarantee">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Garantie 30 jours satisfait ou remboursé. Pas de résultat = pas de facture.
       </div>
-
       <a href="#contact" class="btn-primary offer-cta">Je veux remplir mon carnet →</a>
     </div>
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
+<!-- FAQ -->
 <section id="faq">
   <div class="section-inner">
     <div class="section-label reveal" style="text-align:center;">Questions fréquentes</div>
     <h2 class="section-title reveal" style="text-align:center;">Tout ce que vous voulez savoir</h2>
     <br><br>
     <div class="faq-list">
-      <div class="faq-item reveal">
-        <button class="faq-question">Combien de temps avant de voir les premiers résultats ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <div class="faq-answer"><p>Les premières demandes arrivent généralement dans les 48 à 72 heures après le lancement de la campagne. Le système de relance prend son plein effet après 1 à 2 semaines.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-question">Je ne suis pas à l'aise avec la technologie, c'est un problème ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <div class="faq-answer"><p>Pas du tout. On gère tout de A à Z. Vous recevez vos demandes par SMS ou email, et on vous fait un point régulier. Si vous savez lire un SMS, vous savez utiliser notre service.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-question">C'est quoi la différence avec les plateformes de devis (type Habitatpresto) ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <div class="faq-answer"><p>Sur ces plateformes, le même lead est vendu à 4-5 artisans. Ici, les demandes sont exclusives : quand quelqu'un vous contacte, c'est vous et personne d'autre.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-question">Et si ça ne marche pas, je perds quoi ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <div class="faq-answer"><p>Rien. Garantie 30 jours : si vous n'avez pas de résultats concrets, on vous rembourse intégralement. On prend le risque, pas vous.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-question">Je suis plombier / électricien / couvreur / maçon — ça marche pour moi ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <div class="faq-answer"><p>Oui. Notre système est conçu spécifiquement pour les métiers du bâtiment — plomberie, électricité, maçonnerie, couverture, chauffage, rénovation. On adapte les campagnes à votre métier et votre zone.</p></div>
-      </div>
+      <div class="faq-item reveal"><button class="faq-question">Combien de temps avant de voir les premiers résultats ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-answer"><p>Les premières demandes arrivent généralement dans les 48 à 72 heures après le lancement de la campagne. Le système de relance prend son plein effet après 1 à 2 semaines.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-question">Je ne suis pas à l'aise avec la technologie, c'est un problème ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-answer"><p>Pas du tout. On gère tout de A à Z. Vous recevez vos demandes par SMS ou email, et on vous fait un point régulier. Si vous savez lire un SMS, vous savez utiliser notre service.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-question">C'est quoi la différence avec les plateformes de devis (type Habitatpresto) ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-answer"><p>Sur ces plateformes, le même lead est vendu à 4-5 artisans. Ici, les demandes sont exclusives : quand quelqu'un vous contacte, c'est vous et personne d'autre.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-question">Et si ça ne marche pas, je perds quoi ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-answer"><p>Rien. Garantie 30 jours : si vous n'avez pas de résultats concrets, on vous rembourse intégralement. On prend le risque, pas vous.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-question">Je suis plombier / électricien / couvreur / maçon — ça marche pour moi ?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-answer"><p>Oui. Notre système est conçu spécifiquement pour les métiers du bâtiment — plomberie, électricité, maçonnerie, couverture, chauffage, rénovation.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ===== CTA + FORMULAIRE + CALENDRIER ===== -->
+<!-- CTA + FORMULAIRE + CALENDLY -->
 <section class="final-cta" id="contact">
   <div class="section-inner">
     <div class="section-label reveal">Prêt ?</div>
     <h2 class="section-title reveal">Arrêtez de perdre des clients.<br>Remplissez votre carnet.</h2>
-    <p class="section-desc reveal">Remplissez le formulaire, on vous rappelle dans les 24h. Ou réservez directement un créneau.</p>
+    <p class="section-desc reveal">Remplissez le formulaire ou réservez directement un créneau de 30 minutes.</p>
 
-    <!-- FORMULAIRE -->
-    <div class="contact-form reveal" id="contactForm">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="fname">Prénom</label>
-          <input type="text" id="fname" name="first_name" placeholder="Jean" required>
+    <!-- TABS -->
+    <div class="contact-tabs reveal">
+      <button class="contact-tab active" onclick="switchTab('form')">📝 On me rappelle</button>
+      <button class="contact-tab" onclick="switchTab('calendar')">📅 Je réserve un créneau</button>
+    </div>
+
+    <!-- TAB: FORMULAIRE -->
+    <div class="tab-content active" id="tab-form">
+      <div class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Prénom</label>
+            <input type="text" id="fname" placeholder="Jean" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Nom</label>
+            <input type="text" id="lname" placeholder="Dupont" required>
+          </div>
         </div>
         <div class="form-group">
-          <label for="lname">Nom</label>
-          <input type="text" id="lname" name="last_name" placeholder="Dupont" required>
+          <label for="phone">Téléphone</label>
+          <input type="tel" id="phone" placeholder="06 12 34 56 78" required>
+        </div>
+        <div class="form-group">
+          <label for="metier">Votre métier</label>
+          <select id="metier" required>
+            <option value="" disabled selected>Sélectionnez votre métier</option>
+            <option value="plomberie">Plomberie / Chauffage</option>
+            <option value="electricite">Électricité</option>
+            <option value="maconnerie">Maçonnerie / Gros œuvre</option>
+            <option value="couverture">Couverture / Toiture</option>
+            <option value="renovation">Rénovation générale</option>
+            <option value="peinture">Peinture / Revêtements</option>
+            <option value="menuiserie">Menuiserie</option>
+            <option value="carrelage">Carrelage / Sol</option>
+            <option value="autre">Autre métier BTP</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="ville">Ville / Zone d'intervention</label>
+          <input type="text" id="ville" placeholder="Lyon, Marseille, Nantes..." required>
+        </div>
+        <button type="button" class="btn-primary form-submit" onclick="submitForm()">On me rappelle →</button>
+        <p class="form-note">Gratuit · Sans engagement · Réponse sous 24h</p>
+        <div class="form-success" id="formSuccess">
+          <h4>✓ Demande envoyée !</h4>
+          <p>On vous rappelle dans les 24h pour comprendre votre situation et voir comment on peut remplir votre carnet.</p>
         </div>
       </div>
-      <div class="form-group">
-        <label for="phone">Téléphone</label>
-        <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" required>
-      </div>
-      <div class="form-group">
-        <label for="metier">Votre métier</label>
-        <select id="metier" name="metier" required>
-          <option value="" disabled selected>Sélectionnez votre métier</option>
-          <option value="plomberie">Plomberie / Chauffage</option>
-          <option value="electricite">Électricité</option>
-          <option value="maconnerie">Maçonnerie / Gros œuvre</option>
-          <option value="couverture">Couverture / Toiture</option>
-          <option value="renovation">Rénovation générale</option>
-          <option value="peinture">Peinture / Revêtements</option>
-          <option value="menuiserie">Menuiserie</option>
-          <option value="carrelage">Carrelage / Sol</option>
-          <option value="autre">Autre métier BTP</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="ville">Ville / Zone d'intervention</label>
-        <input type="text" id="ville" name="ville" placeholder="Lyon, Marseille, Nantes..." required>
-      </div>
+    </div>
 
-      <button type="button" class="btn-primary form-submit" onclick="submitForm()">
-        On me rappelle →
-      </button>
-      <p class="form-note">Gratuit · Sans engagement · Réponse sous 24h</p>
-
-      <!-- Succès -->
-      <div class="form-success" id="formSuccess">
-        <h4>✓ Demande envoyée !</h4>
-        <p>On vous rappelle dans les 24h pour comprendre votre situation et voir comment on peut remplir votre carnet.</p>
+    <!-- TAB: CALENDLY -->
+    <div class="tab-content" id="tab-calendar">
+      <div class="calendly-container">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/arthur-signorel/30min?hide_gdpr_banner=1&background_color=0f1610&text_color=f0f5f1&primary_color=16a34a" style="min-width:100%;min-height:650px;"></div>
       </div>
     </div>
 
-    <!-- OU -->
-    <div class="divider-or reveal">
-      <span>ou réservez directement</span>
-    </div>
-
-    <!-- CALENDRIER GHL -->
-    <div class="calendar-embed reveal">
-      <!-- ============================================
-           🔧 CALENDRIER GHL : Remplace ce bloc par ton iframe.
-           Dans GHL → Calendars → ton calendrier → "Embed" → copie le code.
-           Exemple :
-           <iframe src="https://api.leadconnectorhq.com/widget/booking/XXXXXXXXX"
-                   style="width:100%;height:600px;border:none;"
-                   scrolling="no"></iframe>
-           ============================================ -->
-      <div class="calendar-embed-placeholder">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>
-        <p>Ton calendrier GHL apparaîtra ici</p>
-        <code>Remplace ce bloc par ton iframe GHL</code>
-      </div>
-    </div>
-
-    <p class="reveal" style="margin-top:1.5rem;font-size:0.85rem;color:var(--gray-400);">15 min · Gratuit · Sans engagement</p>
+    <p class="reveal" style="margin-top:1.5rem;font-size:0.85rem;color:var(--gray-400);">Gratuit · Sans engagement</p>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- FOOTER -->
 <footer>
   <p>&copy; 2025 Synkore. Tous droits réservés. · <a href="mailto:contact@synkore.com">contact@synkore.com</a></p>
 </footer>
 
-<!-- ===== WHATSAPP WIDGET ===== -->
-<!-- 🔧 Remplace TON_NUMERO par ton numéro WhatsApp (format international sans +, ex: 33612345678) -->
+<!-- WHATSAPP -->
+<!-- 🔧 Remplace 33XXXXXXXXX par ton numéro (ex: 33612345678) -->
 <div class="whatsapp-widget">
   <div class="whatsapp-tooltip">Une question ? Écrivez-nous</div>
   <a href="https://wa.me/33662013243?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20votre%20offre%20Carnet%20Plein%20pour%20mon%20entreprise%20BTP."
@@ -1139,22 +881,21 @@
   </a>
 </div>
 
+<!-- Calendly Widget JS -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 <script>
-// Nav scroll
+// Nav
 const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-});
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
 
 // Hamburger
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => navLinks.classList.remove('open'));
-});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-// Scroll reveal
+// Reveal
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
@@ -1185,10 +926,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ===== FORMULAIRE → WEBHOOK GHL =====
+// Tabs
+function switchTab(tab) {
+  document.querySelectorAll('.contact-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  if (tab === 'form') {
+    document.querySelectorAll('.contact-tab')[0].classList.add('active');
+    document.getElementById('tab-form').classList.add('active');
+  } else {
+    document.querySelectorAll('.contact-tab')[1].classList.add('active');
+    document.getElementById('tab-calendar').classList.add('active');
+  }
+}
+
+// Form submit
+/*
+  🔧 FORMULAIRE — 2 options pour recevoir les leads :
+  
+  OPTION A : Formspree (le plus simple, gratuit 50 soumissions/mois)
+  1. Va sur formspree.io → crée un compte gratuit
+  2. Crée un nouveau form → copie ton endpoint (genre https://formspree.io/f/xABCDEFG)
+  3. Remplace FORMSPREE_ENDPOINT ci-dessous par ton URL
+  4. Tu recevras chaque lead par email
+  5. Bonus : dans Formspree, connecte Google Sheets dans Plugins pour aussi avoir un spreadsheet
+  
+  OPTION B : Google Sheets direct (via Google Apps Script)
+  → Plus technique mais 100% gratuit sans limite. Demande-moi si tu veux cette option.
+*/
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/https://formspree.io/f/xykdanly'; // 🔧 Remplace par ton endpoint
+
 function submitForm() {
-  const form = document.getElementById('contactForm');
-  const btn = form.querySelector('.form-submit');
+  const btn = document.querySelector('.form-submit');
   const success = document.getElementById('formSuccess');
 
   const data = {
@@ -1197,55 +965,38 @@ function submitForm() {
     phone: document.getElementById('phone').value,
     metier: document.getElementById('metier').value,
     ville: document.getElementById('ville').value,
-    source: 'Site Synkore - Formulaire Carnet Plein'
+    _subject: 'Nouveau lead Synkore - Carnet Plein'
   };
 
-  // Validation simple
   if (!data.first_name || !data.phone || !data.metier || !data.ville) {
     btn.textContent = '⚠ Remplissez tous les champs';
-    btn.style.background = '#8B5CF6';
-    setTimeout(() => {
-      btn.textContent = 'On me rappelle →';
-      btn.style.background = '';
-    }, 2000);
+    btn.style.background = '#DC2626';
+    setTimeout(() => { btn.textContent = 'On me rappelle →'; btn.style.background = ''; }, 2000);
     return;
   }
 
   btn.textContent = 'Envoi en cours...';
   btn.disabled = true;
 
-  /* ============================================
-     🔧 WEBHOOK GHL : Remplace l'URL ci-dessous par ton webhook.
-     
-     Dans GHL → Automation → Create Workflow → Trigger: "Webhook"
-     → Copie l'URL du webhook → Colle-la ici.
-     
-     Le workflow recevra : first_name, last_name, phone, metier, ville, source
-     Tu peux ensuite créer un contact, envoyer un SMS de confirmation, 
-     assigner à un pipeline, etc.
-     ============================================ */
-  const WEBHOOK_URL = 'COLLE_TON_WEBHOOK_GHL_ICI';
-
-  fetch(WEBHOOK_URL, {
+  fetch(FORMSPREE_ENDPOINT, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-    mode: 'no-cors'
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
   })
-  .then(() => {
-    // Masquer le formulaire, afficher le succès
-    form.querySelectorAll('.form-group, .form-row, .form-submit, .form-note').forEach(el => {
-      el.style.display = 'none';
-    });
-    success.classList.add('show');
+  .then(response => {
+    if (response.ok) {
+      document.querySelectorAll('#contactForm .form-group, #contactForm .form-row, .form-submit, .form-note').forEach(el => el.style.display = 'none');
+      success.classList.add('show');
+    } else {
+      btn.textContent = 'Erreur — réessayez';
+      btn.disabled = false;
+      setTimeout(() => { btn.textContent = 'On me rappelle →'; }, 2000);
+    }
   })
   .catch(() => {
-    // Même en cas d'erreur (mode no-cors), on affiche le succès
-    // car le webhook reçoit quand même la data
-    form.querySelectorAll('.form-group, .form-row, .form-submit, .form-note').forEach(el => {
-      el.style.display = 'none';
-    });
-    success.classList.add('show');
+    btn.textContent = 'Erreur réseau — réessayez';
+    btn.disabled = false;
+    setTimeout(() => { btn.textContent = 'On me rappelle →'; }, 2000);
   });
 }
 </script>
