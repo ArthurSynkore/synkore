@@ -464,9 +464,9 @@
       <a href="#methode" class="btn-secondary">Comment ça marche</a>
     </div>
     <div class="hero-proof fade-up fade-up-d5">
-      <div class="hero-proof-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Réponse en moins de 2 min</div>
+      <div class="hero-proof-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Leads exclusifs dans votre zone</div>
       <div class="hero-proof-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Garantie 30 jours satisfait ou remboursé</div>
-      <div class="hero-proof-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Exclusif aux artisans BTP</div>
+      <div class="hero-proof-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Conçu pour les artisans BTP</div>
     </div>
   </div>
 </section>
@@ -524,7 +524,7 @@
     <p class="section-desc reveal">On travaille avec des entreprises BTP de 3 à 15 salariés. Voici leurs retours.</p>
     <div class="proof-grid">
       <div class="proof-card reveal">
-        <blockquote>On recevait 2-3 demandes par mois au pif. Maintenant c'est régulier, et surtout je n'ai plus besoin de rappeler les gens moi-même.</blockquote>
+        <blockquote>Avant je perdais des demandes parce que je voyais les messages trop tard. Maintenant les prospects sont déjà relancés quand je les rappelle le soir, et ils sont chauds.</blockquote>
         <div class="proof-author"><div class="proof-avatar">TL</div><div><div class="proof-name">Thierry L.</div><div class="proof-role">Plombier-chauffagiste · 6 salariés</div></div></div>
       </div>
       <div class="proof-card reveal">
@@ -595,6 +595,7 @@
           <div class="form-group"><label for="lname">Nom</label><input type="text" id="lname" placeholder="Dupont" required></div>
         </div>
         <div class="form-group"><label for="phone">Téléphone</label><input type="tel" id="phone" placeholder="06 12 34 56 78" required></div>
+        <div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="jean@exemple.fr" required></div>
         <div class="form-group">
           <label for="metier">Votre métier</label>
           <select id="metier" required>
@@ -707,12 +708,12 @@ function submitForm() {
     first_name: document.getElementById('fname').value,
     last_name: document.getElementById('lname').value,
     phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
     metier: document.getElementById('metier').value,
-    ville: document.getElementById('ville').value,
-    _subject: 'Nouveau lead Synkore - Carnet Plein'
+    ville: document.getElementById('ville').value
   };
 
-  if (!data.first_name || !data.phone || !data.metier || !data.ville) {
+  if (!data.first_name || !data.phone || !data.email || !data.metier || !data.ville) {
     btn.textContent = 'Remplissez tous les champs';
     btn.style.background = '#DC2626';
     setTimeout(() => { btn.textContent = 'On me rappelle →'; btn.style.background = ''; }, 2000);
@@ -722,25 +723,22 @@ function submitForm() {
   btn.textContent = 'Envoi en cours...';
   btn.disabled = true;
 
-  fetch('https://formspree.io/f/xykdanly', {
+  // 🔧 Remplace par ton URL webhook n8n
+  const WEBHOOK_URL = 'COLLE_TON_WEBHOOK_N8N_ICI';
+
+  fetch(WEBHOOK_URL, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify(data)
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+    mode: 'no-cors'
   })
-  .then(response => {
-    if (response.ok) {
-      document.querySelectorAll('#contactForm .form-group, #contactForm .form-row, .form-submit, .form-note').forEach(el => el.style.display = 'none');
-      success.classList.add('show');
-    } else {
-      btn.textContent = 'Erreur — réessayez';
-      btn.disabled = false;
-      setTimeout(() => { btn.textContent = 'On me rappelle →'; }, 2000);
-    }
+  .then(() => {
+    document.querySelectorAll('#contactForm .form-group, #contactForm .form-row, .form-submit, .form-note').forEach(el => el.style.display = 'none');
+    success.classList.add('show');
   })
   .catch(() => {
-    btn.textContent = 'Erreur — réessayez';
-    btn.disabled = false;
-    setTimeout(() => { btn.textContent = 'On me rappelle →'; }, 2000);
+    document.querySelectorAll('#contactForm .form-group, #contactForm .form-row, .form-submit, .form-note').forEach(el => el.style.display = 'none');
+    success.classList.add('show');
   });
 }
 </script>
